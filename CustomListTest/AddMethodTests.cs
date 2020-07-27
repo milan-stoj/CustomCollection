@@ -1,6 +1,5 @@
-﻿using System;
+﻿using CustomList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomList;
 
 namespace CustomListTest
 {
@@ -50,7 +49,10 @@ namespace CustomListTest
             int actual;
 
             //Act
-            for( int i = 0; i < 4; i++) { list.Add(i); }
+            for (int i = 0; i < 4; i++)
+            { 
+                list.Add(i); 
+            }
             actual = list.Capacity;
 
             //Assert
@@ -88,6 +90,5 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
     }
 }
