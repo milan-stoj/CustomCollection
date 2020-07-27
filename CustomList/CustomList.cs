@@ -58,7 +58,7 @@ namespace CustomList
         {
             capacity *= 2;
             T[] tempList = new T[capacity];
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++) 
             {
                 tempList[i] = list[i];
             }
