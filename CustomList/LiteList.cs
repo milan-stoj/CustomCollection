@@ -1,9 +1,4 @@
-﻿/****************************************************/
-// Filename: ListLite
-// Created: Milan Stojanovic
-/****************************************************/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +14,19 @@ namespace CustomList
         private T[] items;
 
         // Member properties
-        public T this[int index] { get => items[index]; set => items[index] = value; }
-        public int Count { get => count; }
-        public int Capacity { get => capacity; }
+        public T this[int index]                    // Declaring public indexer
+        { 
+            get => items[index]; 
+            set => items[index] = value; 
+        } 
+        public int Count { get => count; }          // Declaring public Count property
+        public int Capacity { get => capacity; }    // Declaring public Capacity property
 
         // Constructor
         public LiteList()
         {
             count = 0; capacity = 4; 
-            items = new T[capacity];
+            items = new T[capacity]ts;
 
         }
 
@@ -56,6 +55,8 @@ namespace CustomList
 
         // Private LiteList methods
         private void CheckListSize()
+        // Checks to see if list size
+        // reaches capacity.
         {
             if (count == capacity)
             {
@@ -64,8 +65,11 @@ namespace CustomList
         }
 
         private void DoubleListSize()
+        // Upon reaching capacity - array 
+        // is copied to tempArray, new array doubled in
+        // size, and items copied to new larger array.
         {
-            capacity *= 2;
+            capacity *= 2;                        
             T[] tempList = new T[capacity];
             for (int i = 0; i < count; i++) 
             {
