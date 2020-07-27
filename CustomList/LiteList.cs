@@ -54,9 +54,7 @@ namespace CustomList
         }
 
         // Private LiteList methods
-        private void CheckListSize()
-        // Checks to see if list size
-        // reaches capacity.
+        private void CheckListSize()    // Checks for count == capacity, and runs DoubleListSize method
         {
             if (count == capacity)
             {
@@ -64,10 +62,7 @@ namespace CustomList
             }
         }
 
-        private void DoubleListSize()
-        // Upon reaching capacity - array 
-        // is copied to tempArray, new array doubled in
-        // size, and items copied to new larger array.
+        private void DoubleListSize()   // Doubles public array items capacity
         {
             capacity *= 2;                        
             T[] tempList = new T[capacity];
