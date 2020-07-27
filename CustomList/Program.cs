@@ -10,12 +10,8 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            CustomList<int> newList = new CustomList<int>();
-            newList.Add(2);
-            newList.Add(3);
-            newList.Add(4);
-            newList.Add(5);
-            newList.Add(6);
+            List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
+            LiteList<int> customList = new LiteList<int>();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace CustomListTest
         public void RemoveMethod_RemoveItem_CountDecrements()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
+            LiteList<int> list = new LiteList<int>();
             int expected = 3;
             int actual;
 
@@ -31,7 +31,7 @@ namespace CustomListTest
         public void RemoveMethod_RemoveItem_LastItemChanges()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
+            LiteList<int> list = new LiteList<int>();
             int expected = 3;
             int actual;
 
