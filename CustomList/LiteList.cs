@@ -12,7 +12,7 @@ namespace CustomList
         private int count;
         private int capacity;
         private T[] items;
-
+        
         // Member properties
         public T this[int index]                    // Declaring public indexer
         { 
@@ -25,10 +25,11 @@ namespace CustomList
         // Constructor
         public LiteList()
         {
+            
             count = 0; capacity = 4; 
             items = new T[capacity];
-
         }
+
 
         // Public LiteList methods
         public void Add(T item)

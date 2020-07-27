@@ -10,8 +10,9 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
+            int[] array = new int[] { 1, 2, 3 };
             List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
-            LiteList<int> customList = new LiteList<int>();
+            LiteList<int> customList = new LiteList<int>() /*{1,2,3,4,5} not working (!?)*/;
         }
     }
 }
