@@ -5,10 +5,10 @@ using CustomList;
 namespace CustomListTest
 {
     [TestClass]
-    public class RemoveMethodTests
+    public class RemoveLastMethodTests
     {
         [TestMethod]
-        public void RemoveMethod_RemoveItem_CountDecrements()
+        public void RemoveLastMethod_RemoveItem_CountDecrements()
         {
             //Arrange
             LiteList<int> list = new LiteList<int>();
@@ -20,7 +20,7 @@ namespace CustomListTest
             list.Add(5);
             list.Add(5);
             list.Add(5); // Count = 4
-            list.Remove();
+            list.RemoveLast();
             actual = list.Count;
 
             //Assert
@@ -28,7 +28,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void RemoveMethod_RemoveItem_LastItemChanges()
+        public void RemoveLastMethod_RemoveItem_LastItemChanges()
         {
             //Arrange
             LiteList<int> list = new LiteList<int>();
@@ -40,7 +40,7 @@ namespace CustomListTest
             list.Add(2);
             list.Add(3);
             list.Add(4); // Last Item (Count - 1)
-            list.Remove();
+            list.RemoveLast();
             actual = list[list.Count-1];
 
             //Assert

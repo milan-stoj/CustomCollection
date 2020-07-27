@@ -7,7 +7,7 @@ namespace CustomListTest
     public class AddMethodTests
     {
         [TestMethod]
-        public void AddMethod_AddOneInt_CountIs1()
+        public void AddMethod_AddOneInt_CountIsOne()
         {
             //Arrange
             LiteList<int> list = new LiteList<int>();
@@ -128,5 +128,8 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        // Different data types ... 
+        // 
     }
 }

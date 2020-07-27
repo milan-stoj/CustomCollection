@@ -34,14 +34,19 @@ namespace CustomList
         // Public LiteList methods
         public void Add(T item)
         {
-            items[count] = item; count++;
+            items[count] = item; count++; 
             CheckListSize();
         }
 
-        public void Remove()
+        public void RemoveLast() 
         {
             items[count] = default(T);
             count--;
+        }
+
+        public void Remove() // Search for specific thing and remove one instance of it.
+        {
+            
         }
 
         public void Zip()
