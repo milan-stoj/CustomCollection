@@ -26,7 +26,7 @@ namespace CustomList
         public LiteList()
         {
             count = 0; capacity = 4; 
-            items = new T[capacity]ts;
+            items = new T[capacity];
 
         }
 
