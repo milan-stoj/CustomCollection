@@ -52,6 +52,7 @@
     <Compile Include="AddMethodTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveLastMethodTests.cs" />
+    <Compile Include="RemoveMethodTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

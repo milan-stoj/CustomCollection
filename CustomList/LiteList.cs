@@ -25,7 +25,6 @@ namespace CustomList
         // Constructor
         public LiteList()
         {
-            
             count = 0; capacity = 4; 
             items = new T[capacity];
         }
@@ -44,9 +43,17 @@ namespace CustomList
             count--;
         }
 
-        public void Remove() // Search for specific thing and remove one instance of it.
+        public void Remove(T target) // Search for specific thing and remove one instance of it.
         {
-            
+            for (int i = 0; i < Count; i++)
+            {
+                if(target.Equals(items[i]))
+                {
+                    items[i] = default(T);
+                    count--;
+                    break;
+                }
+            }
         }
 
         public void Zip()
