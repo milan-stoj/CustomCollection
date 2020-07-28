@@ -13,8 +13,10 @@ namespace CustomList
             int[] array = new int[] { 1, 2, 3 };
             List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
 
+            list.Remove(1);
+
             list.Remove(3);
-            LiteList<int> customList = new LiteList<int>() /*{1,2,3,4,5} not working (!?)*/;
+            LiteList<int> customList = new LiteList<int>();
         }
     }
 }

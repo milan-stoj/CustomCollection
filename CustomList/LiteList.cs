@@ -16,19 +16,18 @@ namespace CustomList
         // Member properties
         public T this[int index]                    // Declaring public indexer
         { 
-            get => items[index]; 
+            get => items[index];
             set => items[index] = value; 
-        } 
+        }
         public int Count { get => count; }          // Declaring public Count property
         public int Capacity { get => capacity; }    // Declaring public Capacity property
 
         // Constructor
         public LiteList()
         {
-            count = 0; capacity = 4; 
+            count = 0; capacity = 4;
             items = new T[capacity];
         }
-
 
         // Public LiteList methods
         public void Add(T item)
@@ -45,15 +44,25 @@ namespace CustomList
 
         public void Remove(T target) // Search for specific thing and remove one instance of it.
         {
-            for (int i = 0; i < Count; i++)
+            bool removed = false;
+            T[] tempList = new T[capacity];
+            int itemsIndex = 0;
+            for (int i = 0; i < count; i++)
             {
-                if(target.Equals(items[i]))
+                if(removed == false && target.Equals(items[i]))
                 {
-                    items[i] = default(T);
-                    count--;
-                    break;
+                    removed = true;
+                    tempList[i] = items[itemsIndex + 1];
+                    itemsIndex++;
                 }
+                else
+                {
+                    tempList[i] = items[itemsIndex];
+                }
+                itemsIndex++;
             }
+            items = tempList;
+            count--;
         }
 
         public void Zip()
