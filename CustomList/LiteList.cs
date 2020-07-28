@@ -17,7 +17,7 @@ namespace CustomList
         public T this[int index]                    // Declaring public indexer
         { 
             get => items[index];
-            set => items[index] = value; 
+            set => items[index] = value;
         }
         public int Count { get => count; }          // Declaring public Count property
         public int Capacity { get => capacity; }    // Declaring public Capacity property

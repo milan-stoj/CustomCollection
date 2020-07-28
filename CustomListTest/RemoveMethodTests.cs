@@ -42,7 +42,8 @@ namespace CustomListTest
             list.Add(1);
             list.Add(1);
             list.Add(1);
-            int expected = 2;  // Expect list to contain two instances of one.
+            list.Add(1);
+            int expected = 3;  // Expect list to contain three instances of int one.
             int actual = default;
 
             //Act
@@ -69,15 +70,14 @@ namespace CustomListTest
             list.Add(3);
             list.Add(4);
             int target = 2;     // Target object to remove.
-            int expected1 = 1; 
-            int expected2 = 3;  
-            int expected3 = 4;  
+            int expected1 = 1;
+            int expected2 = 3;
+            int expected3 = 4;
             int expected4 = 0;
             int actual1;
             int actual2;
             int actual3;
             int actual4;
-            
             
             //Act
             list.Remove(target);
