@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class LiteList<T>
+    public class LiteList<T> : IEnumerable
     {
         // Member variables
         private int count;
@@ -40,6 +41,14 @@ namespace CustomList
         {
             items[count] = default(T);
             count--;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for(int index = 0; index < count; index++)
+            {
+                yield return items[index];
+            }
         }
 
         public void Remove(T target) // Search for specific thing and remove one instance of it.
@@ -93,6 +102,11 @@ namespace CustomList
                 tempList[i] = items[i];
             }
             items = tempList;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

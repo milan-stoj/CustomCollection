@@ -13,9 +13,6 @@ namespace CustomList
             int[] array = new int[] { 1, 2, 3 };
             List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
 
-            list.Remove(1);
-            int test = list[4];
-
             list.Remove(3);
             LiteList<int> customList = new LiteList<int>();
             customList.Add(1);
@@ -23,9 +20,6 @@ namespace CustomList
             customList.Add(3);
             customList.Add(4);
             customList.Add(5);
-
-            customList.Remove(4);
-            int newTest = customList[4];
         }
     }
 }
