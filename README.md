@@ -41,7 +41,7 @@ list.sort();
 // list becomes a LiteList<int> with values in ascending order {1,2,3,4,5,6}
 ```
 
-**Adding Two Lists**
+**Adding Two LiteLists**
 ```csharp
 LiteList<int> aList = new LiteList<int>() {3, 3, 10};
 LiteList<int> bList = new LiteList<int>() {2, 4, 6};
@@ -49,13 +49,20 @@ LiteList<int> newList = aList + bList;
 // list becomes a LiteList<int> with values in ascending order {5, 7, 16}
 ```
 
-**Subtracting Two Lists**
+**Subtracting Two LiteLists**
 ```csharp
 LiteList<int> aList = new LiteList<int>() {3, 3, 10};
 LiteList<int> bList = new LiteList<int>() {2, 4, 6};
 LiteList<int> newList = aList - bList;
 // newList becomes a LiteList<int> with values {1,4}
 // see "-OperatorDocumentation.txt" for more information.
+```
+
+**Converting Contents of LiteList to String**
+```csharp
+LiteList<int> aList = new LiteList<int>() {3, 3, 10};
+string new = aList.ToString();
+// aList becomes a string "[3][3][10]"
 ```
 
 **Viewing LiteList Properties**
