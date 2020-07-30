@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace CustomList
 {
@@ -13,10 +14,10 @@ namespace CustomList
         private int count;
         private int capacity;
         private T[] items;
-        
+
         // Member properties
         public T this[int index]                    // Declaring public indexer
-        { 
+        {
             get => items[index];
             set => items[index] = value;
         }
@@ -33,11 +34,11 @@ namespace CustomList
         // Public LiteList methods
         public void Add(T item)
         {
-            items[count] = item; count++; 
+            items[count] = item; count++;
             CheckListSize();
         }
 
-        public void RemoveLast() 
+        public void RemoveLast()
         {
             items[count] = default(T);
             count--;
@@ -45,7 +46,7 @@ namespace CustomList
 
         public IEnumerator GetEnumerator()
         {
-            for(int index = 0; index < count; index++)
+            for (int index = 0; index < count; index++)
             {
                 yield return items[index];
             }
@@ -58,7 +59,7 @@ namespace CustomList
             int itemsIndex = 0;
             for (int i = 0; i < count; i++)
             {
-                if(removed == false && target.Equals(items[i]))
+                if (removed == false && target.Equals(items[i]))
                 {
                     removed = true;
                     tempList[i] = items[itemsIndex + 1];
@@ -74,10 +75,54 @@ namespace CustomList
             count--;
         }
 
-        public void Zip()
+        public LiteList<T> Zip(LiteList<T> zipList)
         {
-
+            int maxCount = Math.Max(count, zipList.count);
+            LiteList<T> newList = new LiteList<T>();
+            for (int i = 0; i < maxCount; i++)
+            {
+                newList.Add(items[i]);
+                newList.Add(zipList[i]);
+            }
+            return newList;
         }
+
+        public override string ToString()
+        {
+            string tempString = "";
+            foreach (T item in items)
+            {
+                tempString += "[" + item.ToString() + "]";
+            }
+            return tempString;
+        }
+
+        public static LiteList<T> operator +(LiteList<T> a, LiteList<T> b)
+        {
+            int maxCount = Math.Max(a.count, b.count);
+            LiteList<T> newList = new LiteList<T>();
+            for (int i = 0; i < maxCount; i++)
+            {
+                dynamic x = a[i];                       // Dynamic keyword allows operation to be resolved at run-time.
+                dynamic y = b[i];
+                newList.Add(x + y);
+            }
+            return newList;
+        }
+
+        public static LiteList<T> operator -(LiteList<T> a, LiteList<T> b) 
+        {
+            int maxCount = Math.Max(a.count, b.count);
+            LiteList<T> newList = new LiteList<T>();
+            for (int i = 0; i < maxCount; i++)
+            {
+                dynamic x = a[i];                       // Dynamic keyword allows operation to be resolved at run-time.
+                dynamic y = b[i];
+                newList.Add(x - y);
+            }
+            return newList;
+        }
+
 
         public void Sort()
         {
@@ -93,6 +138,7 @@ namespace CustomList
             }
         }
 
+        
         private void DoubleListSize()   // Doubles public array items capacity
         {
             capacity *= 2;                        

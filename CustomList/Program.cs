@@ -20,6 +20,30 @@ namespace CustomList
             customList.Add(3);
             customList.Add(4);
             customList.Add(5);
+
+            Console.WriteLine(customList.ToString());
+            Console.ReadLine();
+
+
+            LiteList<int> listOne = new LiteList<int>();
+            listOne.Add(1);
+            listOne.Add(3);
+            listOne.Add(5);
+            LiteList<int> listTwo = new LiteList<int>();
+            listTwo.Add(2);
+            listTwo.Add(4);
+            listTwo.Add(6);
+
+            LiteList<int> zipper = listOne.Zip(listTwo);
+
+            Console.WriteLine(zipper.ToString());
+            Console.ReadLine();
+
+            LiteList<int> newList = listOne + listTwo;
+            Console.WriteLine(newList.ToString());
+            Console.ReadLine();
+
+            
         }
     }
 }
