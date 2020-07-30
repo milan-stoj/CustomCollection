@@ -6,7 +6,7 @@ A lightweight *list-like* class written for C#.
 * Add/Remove items
 * Index/Itterate through items
 * Zip lists together
-* Sort (Using [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort#:~:text=Bubble%20sort%2C%20sometimes%20referred%20to,until%20the%20list%20is%20sorted.))
+* Sort (Using [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort))
 
 ## Usage
 **Instantiating a LiteList:**
