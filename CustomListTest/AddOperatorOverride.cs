@@ -39,5 +39,32 @@ namespace CustomListTest
             Assert.AreEqual(expectedIndexOne, actualIndexOne);
             Assert.AreEqual(expectedIndexTwo, actualIndexTwo);
         }
+
+        [TestMethod]
+        public void AddOperator_AddTwoLists_NewListCountCorrect()
+        {
+            //Arrange
+            LiteList<int> listOne = new LiteList<int>();
+            listOne.Add(1);
+            listOne.Add(3);
+            listOne.Add(5);
+
+            LiteList<int> listTwo = new LiteList<int>();
+            listTwo.Add(2);
+            listTwo.Add(4);
+            listTwo.Add(6);
+
+            int expectedCount = 3;
+            int actualCount;
+
+            //Act
+            LiteList<int> newList = listOne + listTwo;
+            actualCount = newList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+
+        }
+
     }
 }
