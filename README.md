@@ -6,7 +6,7 @@ A lightweight *list-like* class written for C#.
 * Add/Remove items
 * Index/Itterate through items
 * Zip lists together
-* Sort (Using Bubble Sort Algorithm)
+* Sort (Using [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort#:~:text=Bubble%20sort%2C%20sometimes%20referred%20to,until%20the%20list%20is%20sorted.))
 
 ## Usage
 **Instantiating a LiteList:**
@@ -39,6 +39,22 @@ LiteList<int> zippedList = oddList.Zip(evenList);
 LiteList<int> list = new LiteList<int>() {1,6,3,5,2,4};
 list.sort();
 // list becomes a LiteList<int> with values in ascending order {1,2,3,4,5,6}
+```
+
+**Adding Two Lists**
+```csharp
+LiteList<int> aList = new LiteList<int>() {3, 3, 10};
+LiteList<int> bList = new LiteList<int>() {2, 4, 6};
+LiteList<int> newList = aList + bList;
+// list becomes a LiteList<int> with values in ascending order {5, 7, 16}
+```
+
+**Subtracting Two Lists**
+```csharp
+LiteList<int> aList = new LiteList<int>() {3, 3, 10};
+LiteList<int> bList = new LiteList<int>() {2, 4, 6};
+LiteList<int> newList = aList - bList;
+// newList becomes a LiteList<int> with values {1,4}
 ```
 
 **Viewing LiteList Properties**
