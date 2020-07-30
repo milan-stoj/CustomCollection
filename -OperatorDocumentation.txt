@@ -1,0 +1,59 @@
+LiteList -Operrator:
+	Subtracts two LiteList objects from eachother, returning a new list of type T with subtracted values.
+
+Syntax:
+	LiteList<T> newList = listA - listB;
+
+Parameters:
+	public static LiteList<T> operator -(LiteList<T> a, LiteList<T> b) 
+        {
+            int maxCount = Math.Max(a.count, b.count);
+            LiteList<T> newList = new LiteList<T>();
+            for (int i = 0; i < maxCount; i++)
+            {
+                // dynamic keyword allows operation to be resolved at run-time.
+                dynamic x = a[i];      
+                dynamic y = b[i];
+                if (x-y > 0)
+                {
+                    newList.Add(x - y);
+                }
+            }
+            return newList;
+        }
+
+Returns:
+	LiteList<T>
+	Returns a list of matching parameter type T, with values from indexes of listA subtracted from values of matching indexes in listB.
+	Values that result <= 0 are ommited from the final list.
+	
+Implements:
+	dynamic
+	Math.Max()
+
+C# Example:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CustomList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            LiteList<int> listA = new LiteList<int>() { 15, 20, 25 };
+            LiteList<int> listB = new LiteList<int>() { 12, 25, 14 };
+            LiteList<int> newList = listA - listB;	// newList becomes list of count 2 with values {3, 11}
+            foreach(int item in newList)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+Console Output:
+	3
+	11
