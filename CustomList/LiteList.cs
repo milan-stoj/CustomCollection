@@ -103,7 +103,8 @@ namespace CustomList
             LiteList<T> newList = new LiteList<T>();
             for (int i = 0; i < maxCount; i++)
             {
-                dynamic x = a[i];                       // Dynamic keyword allows operation to be resolved at run-time.
+                // Dynamic keyword allows operation to be resolved at run-time.
+                dynamic x = a[i];                       
                 dynamic y = b[i];
                 newList.Add(x + y);
             }
@@ -116,20 +117,16 @@ namespace CustomList
             LiteList<T> newList = new LiteList<T>();
             for (int i = 0; i < maxCount; i++)
             {
-                dynamic x = a[i];                       // Dynamic keyword allows operation to be resolved at run-time.
+                // Dynamic keyword allows operation to be resolved at run-time.
+                dynamic x = a[i];      
                 dynamic y = b[i];
                 newList.Add(x - y);
             }
             return newList;
         }
 
-        public int Compare(T a, T b)
-        {
-            Comparer<T> comparer = Comparer<T>.Default;
-            return comparer.Compare(a, b);
-        }
-
-        public void Sort()            // Using bubble sort
+        // Sorting using Bubble-sort algorithm:
+        public void Sort()      
         {
             int i;
             int j;
@@ -155,7 +152,13 @@ namespace CustomList
             }
         }
 
-        public static void SwapElement(LiteList<T> items, int indexA, int indexB)
+        private int Compare(T a, T b)
+        {
+            Comparer<T> comparer = Comparer<T>.Default;
+            return comparer.Compare(a, b);
+        }
+
+        private void SwapElement(LiteList<T> items, int indexA, int indexB)
         {
             T tempObject;
             tempObject = items[indexA];
