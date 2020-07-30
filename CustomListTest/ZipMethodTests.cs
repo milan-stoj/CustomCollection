@@ -8,6 +8,35 @@ namespace CustomListTest
     public class ZipMethodTests
     {
         [TestMethod]
+        public void ZipMethod_ZipTwoLists_CountsUpdatedExpectedly()
+        {
+            //Arrange
+            LiteList<int> oddList = new LiteList<int>();
+            int oddListIndexZero = 1;
+            int oddListIndexOne = 3;
+            int oddListIndexTwo = 5;
+            oddList.Add(oddListIndexZero); oddList.Add(oddListIndexOne); oddList.Add(oddListIndexTwo);
+
+            LiteList<int> evenList = new LiteList<int>();
+            int evenListIndexZero = 2;
+            int evenListIndexOne = 4;
+            int evenListIndexTwo = 6;
+            evenList.Add(evenListIndexZero); evenList.Add(evenListIndexOne); evenList.Add(evenListIndexTwo);
+
+            int expectedCount = 6;
+            int actualCount;
+
+
+            //Act
+            LiteList<int> zipper = oddList.Zip(evenList);
+            actualCount = zipper.Count;
+
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+
+        [TestMethod]
         public void ZipMethod_ZipTwoLists_IndexesMatchExpected()
         {
             //Arrange
@@ -53,5 +82,8 @@ namespace CustomListTest
             Assert.AreEqual(expectedIndexFour, actualIndexFour);
             Assert.AreEqual(expectedIndexFive, actualIndexFive);
         }
+
+
+
     }
 }
