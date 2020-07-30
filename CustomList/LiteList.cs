@@ -129,7 +129,10 @@ namespace CustomList
                 // dynamic keyword allows operation to be resolved at run-time.
                 dynamic x = a[i];      
                 dynamic y = b[i];
-                newList.Add(x - y);
+                if (x-y > 0)
+                {
+                    newList.Add(x - y);
+                }
             }
             return newList;
         }
