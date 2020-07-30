@@ -123,10 +123,27 @@ namespace CustomList
             return newList;
         }
 
-
-        public void Sort()
+        public int Compare(T a, T b)
         {
+            Comparer<T> comparer = Comparer<T>.Default;
+            return comparer.Compare(a, b);
+        }
 
+        public void Sort()            // Using bubble sort
+        {
+            int i;
+            int j;
+            int count = this.count;
+            for (j = count - 1; j > 0; j--)
+            {
+                for (i = 0; i < j; i++)
+                {
+                    if (Compare(this[i], this[i+1]) > 0) // > 0 means 
+                    {
+                        SwapElement(this, i, i + 1);
+                    }
+                }
+            }
         }
 
         // Private LiteList methods
@@ -138,7 +155,15 @@ namespace CustomList
             }
         }
 
-        
+        public static void SwapElement(LiteList<T> items, int indexA, int indexB)
+        {
+            T tempObject;
+            tempObject = items[indexA];
+            items[indexA] = items[indexB];
+            items[indexB] = tempObject;
+        }
+
+
         private void DoubleListSize()   // Doubles public array items capacity
         {
             capacity *= 2;                        
