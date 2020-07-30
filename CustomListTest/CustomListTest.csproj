@@ -55,6 +55,7 @@
     <Compile Include="RemoveMethodTests.cs" />
     <Compile Include="AddOperatorOverride.cs" />
     <Compile Include="SubtractOperatorOverride.cs" />
+    <Compile Include="SortMethodTests.cs" />
     <Compile Include="ZipMethodTests.cs" />
   </ItemGroup>
   <ItemGroup>
