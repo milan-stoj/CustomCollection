@@ -55,6 +55,7 @@ LiteList<int> aList = new LiteList<int>() {3, 3, 10};
 LiteList<int> bList = new LiteList<int>() {2, 4, 6};
 LiteList<int> newList = aList - bList;
 // newList becomes a LiteList<int> with values {1,4}
+// see "-OperatorDocumentation.txt" for more information.
 ```
 
 **Viewing LiteList Properties**
